@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'index',
     'about',
     'server',
+    'vm',
 ]
 
 MIDDLEWARE = [
