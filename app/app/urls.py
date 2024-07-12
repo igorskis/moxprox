@@ -17,9 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from index import views as i
 from about import views as a
+from rest_framework import routers
+from vm.views import VMView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', i.index, name='home'),
     path('about', a.index, name='about')
 ]
+
+router = routers.DefaultRouter()
+
+router.register(r"api/vm", VMView)
+
+urlpatterns += router.urls
